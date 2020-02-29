@@ -3,7 +3,17 @@ import React from 'react';
 import './App.css';
 // import MyNewComponent from './components/MyNewComponent';
 // import HelloWorld from './components/HelloWorld';
-import PersonCard from './components/PersonCard';
+// import PersonCard from './components/PersonCard';
+
+const PersonCard = (person) => {
+  return (
+    <div>
+      <h1>{person.lastName}, {person.firstName}</h1>
+      <p>Age: {person.age}</p>
+      <p>Hair Color: {person.hairColor}</p>
+    </div>
+  );
+}
 
 const getPersonAt = (index) => {
   const people = [
