@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 
 class PersonCard extends Component {
     render() {
+        const person = this.props;
         return (
             <div>
-                <h1>{this.props.lastName}, {this.props.firstName}</h1>
-                <p>Age: {this.props.age}</p>
-                <p>Hair Color: {this.props.hairColor}</p>
+                <h1>{person.lastName}, {person.firstName}</h1>
+                <p>Age: {person.age}</p>
+                <p>Hair Color: {person.hairColor}</p>
             </div>
         );
     }
