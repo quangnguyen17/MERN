@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals</title>
+</head>
+
+<body>
+    <script>
+        // 1
+        var hello; // declared a variable named hello
+        console.log(hello); // console logs out undefined
+        hello = 'world'; // assignment variable named hello to world
+
+        // 2
+        var needle = 'haystack'; // declared a variable named needle
+        test(); // called an undefined function named test, returns undefined
+        function test() {
+            var needle = 'magnet'; // declared a local scope variable inside the test function called needle and assigning it to magnet
+            console.log(needle); // console logs out needle variable => magnet
+        }
+
+        // 3
+        var brendan = 'super cool'; // declared a variable named brendan and assigning it to 'super cool'
+        function print() {
+            brendan = 'only okay'; // assigning brendan variable to 'only okay' string
+            console.log(brendan); // console logs out brendan variable which is 'only okay'
+        }
+        console.log(brendan); // console logs out brendan variable which is 'only okay'
+
+        // 4
+        var food = 'chicken'; // declared a variable named food and assigning it to 'chicken'
+        console.log(food); // console logs out variable named food which is 'chicken'
+        eat(); // calling an undefined function named eat
+        function eat() {
+            var food; // declared a new variable named food
+            food = 'half-chicken'; // assigning variable named food to 'half-chicken'
+            console.log(food); // console logs out variable named food which is 'half-chicken'
+            food = 'gone'; // assigning variable named food to 'gone'
+        }
+
+        // 5
+        mean(); // calling an undefined function named mean
+        console.log(food); // console logs out an undeclared variable named food
+        var mean = function () {
+            var food; // declared a variable named food
+            food = "chicken"; // assigning a variable named food to 'chicken'
+            console.log(food); // console logs out variable named food => 'chicken'
+            food = "fish"; // assigning a variable named food to 'fish'
+            console.log(food); // console logs out variable named food => 'fish'
+        }
+        console.log(food); // console logs out an undeclared variable named food
+
+        // 6
+        console.log(genre); // console logs out a variable named genre
+        var genre = "disco"; // declared a variable named genre and assigning it to 'disco'
+        rewind(); // calling an undefined function named rewind
+        function rewind() {
+            var genre; // declared a new variabled named genre
+            genre = "rock"; // assigning variable named genre to 'rock'
+            console.log(genre); // console logs out genre => 'rock'
+            genre = "r&b"; // assigning variable named genre to 'r&b'
+            console.log(genre); // console logs out genre => 'r&b'
+        }
+        console.log(genre); // console logs out genre => undefined
+
+        // 7
+        dojo = "san jose"; // assigning variable named dojo to 'san jose'
+        console.log(dojo); // console logs out variable named dojo => 'san jose'
+        learn(); // calling an undefined function named learn
+        function learn() {
+            dojo = "seattle"; // assigning variable named dojo to 'seatle'
+            console.log(dojo); // console logs out variable named dojo => 'seatle'
+            var dojo = "burbank"; // declared a new variable named dojo and assigning it to 'burbank'
+            console.log(dojo); // console logs out variable named dojo => 'burbank'
+        }
+        console.log(dojo); // console logs out variable named dojo
+
+        // 8
+        console.log(makeDojo("Chicago", 65)); // console logs out an undefined function and calls it => undefined
+        console.log(makeDojo("Berkeley", 0)); // console logs out an undefined function and calls it => undefined
+
+        function makeDojo(name, students) {
+            const dojo = {}; // declared a variable name dojo and assigning it to an empty object 
+            dojo.name = name; // setting value of the key 'name' in dojo object to argument name
+            dojo.students = students; // setting value of the key 'students' in dojo object to argument students
+
+            if (dojo.students > 50) {
+                dojo.hiring = true; // setting value of the key 'hiring' in dojo object to argument true
+            } else if (dojo.students <= 0) {
+                dojo = "closed for now"; // setting value of the key 'hiring' in dojo object to 'closed for now'
+            }
+
+            return dojo; // returns the dojo object
+        }
+    </script>
+    <script>
+        // console.log(magicalUnicorns);
+        // var magicalUnicorns = "awesome";
+        // console.log(magicalUnicorns);
+
+        // var foo = "bar";
+        // function magic() {
+        //     foo = "hello world";
+        //     console.log(foo);
+        //     var foo;
+        // }
+        // magic();
+        // console.log(foo);
+
+        // magicalUnicorns();
+        // var magicalUnicorns = () => {
+        //     console.log("Will it blend?");
+        // }
+        // console.log("Don't breathe this!");
+    </script>
+</body>
+
+</html>
