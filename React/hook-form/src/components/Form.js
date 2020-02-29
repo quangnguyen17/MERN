@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
-const Form = () => {
+const Form = (props) => {
     const [state, setState] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        submitted: false
     });
 
     const onChangeHandler = (event) => {
@@ -16,29 +17,50 @@ const Form = () => {
         });
     }
 
-    const onSubmitHandler = (event) => {
-        event.preventDefaut();
+    const onSubmitHandler = event => {
+        event.preventDefault();
+        console.log(state);
+        setState({
+            ...state,
+            submitted: true
+        });
     }
 
     return (
         <div>
+            <h1>{(state.submitted) ? 'Congratulations! You have submitted your form.' : 'You have not submitted your form yet!'}</h1>
             <form className="topForm" onSubmit={onSubmitHandler}>
-                <label for="fn">First Name:</label>
-                <input id="fn" type="text" name="firstName" onChange={onChangeHandler} />
+                <label>First Name:</label>
+                <input type="text" name="firstName" placeholder="First Name" onChange={onChangeHandler} />
                 <br />
-                <label for="ln">Last Name:</label>
-                <input id="ln" type="text" name="lastName" onChange={onChangeHandler} />
+                <small>{(state.firstName.length > 0 && state.firstName.length < 2) ? "First Name must be at least 2 characters." : ""}</small>
+
                 <br />
-                <label for="email">Email:</label>
-                <input id="email" type="email" name="email" onChange={onChangeHandler} />
+                <label>Last Name:</label>
+                <input type="text" name="lastName" placeholder="Last Name" onChange={onChangeHandler} />
                 <br />
-                <label for="password">Password:</label>
-                <input id="password" type="password" name="password" onChange={onChangeHandler} />
+                <small>{(state.lastName.length > 0 && state.lastName.length < 2) ? "Last Name must be at least 2 characters." : ""}</small>
+
                 <br />
-                <label for="confirmPassword">Confirm Password:</label>
-                <input id="confirmPassword" type="password" name="confirmPassword" onChange={onChangeHandler} />
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="Email" onChange={onChangeHandler} />
                 <br />
-                <input id="submitButton" type="submit" value="Submit" />
+                <small>{(state.email.length > 0 && state.email.length < 5) ? "Email must be at least 5 characters." : ""}</small>
+
+                <br />
+                <label>Password:</label>
+                <input type="password" name="password" placeholder="Password" onChange={onChangeHandler} />
+                <br />
+                <small>{(state.password.length > 0 && state.password.length < 8) ? "Password be at least 8 characters." : ""}</small>
+                <br />
+
+                <label>Confirm Password:</label>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={onChangeHandler} />
+                <br />
+                <small>{(state.confirmPassword.length > 0 && state.confirmPassword !== state.password) ? "The passwords must match." : ""}</small>
+                <br />
+
+                <input type="submit" />
             </form>
 
             <p>First Name: {state.firstName}</p>

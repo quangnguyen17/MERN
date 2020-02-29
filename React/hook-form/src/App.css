@@ -10,8 +10,12 @@
   height: 24px;
 }
 
+.App h1 {
+  margin-bottom: 32px;
+}
+
 .App form {
-  height: 32vh;
+  height: 75vh;
 }
 
 .App input {
