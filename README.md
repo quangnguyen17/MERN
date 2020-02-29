@@ -6,7 +6,7 @@
 - React.js
 - Node.js
 
-# Topics
+# Advanced JS Topics
 - Promise
 - Asynchronous vs. Synchronous
 - Callback(s)
