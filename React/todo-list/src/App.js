@@ -57,7 +57,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    setState({ toDoItems: JSON.parse(localStorage.getItem('toDoItems')) });
+    setState({ ...state, toDoItems: JSON.parse(localStorage.getItem('toDoItems')) });
   }, []);
 
   useEffect(() => {
