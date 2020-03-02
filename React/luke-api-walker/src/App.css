@@ -1,0 +1,19 @@
+body {
+  padding: 32px;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+ul {
+  list-style-type: none;
+}
+
+pre {
+  width: 50%;
+  overflow-wrap: break-word;
+}
+
+.App {
+  text-align: center;
+}
