@@ -12,5 +12,8 @@
 - Callback(s)
 - ES6, Arrow Functions
 
+# React Hooks
+- useState, useContext, useReducer, etc...
+
 # Repo
 - contains files and MERN projects
