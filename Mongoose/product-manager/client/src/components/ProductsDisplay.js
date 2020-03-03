@@ -3,21 +3,10 @@ import Form from '../components/Form';
 import axios from 'axios';
 import { Link } from '@reach/router';
 import AppContext from '../AppContext';
+import DeleteButton from '../components/DeleteButton';
 
 const ProductsDisplay = () => {
     const { products } = useContext(AppContext);
-
-    const deleteOnClick = id => {
-        axios.delete(`http://localhost:8000/api/products/${id}`)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
-    }
-
-    const updateOnClick = id => {
-        // axios.update(`http://localhost:8000/api/products/${id}`)
-        //     .then(res => console.log(res))
-        //     .catch(err => console.log(err));
-    }
 
     return (
         <div>
@@ -28,7 +17,7 @@ const ProductsDisplay = () => {
                     <li key={product._id}>
                         <Link to={`/${product._id}`}><b>{product.title}</b></Link>
                         <br />
-                        <button style={{ color: 'red' }} onClick={() => deleteOnClick(product._id)}>Delete Product</button>
+                        <DeleteButton id={product._id} />
                         <br />
                         <Link style={{ color: 'green' }} to={`/${product._id}/edit`}>Update Product</Link>
                         <p>Description: {product.desc} | Price: {product.price}</p>

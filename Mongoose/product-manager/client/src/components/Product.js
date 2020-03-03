@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { navigate } from '@reach/router';
 import axios from 'axios';
+import DeleteButton from '../components/DeleteButton';
 
 const Product = ({ id }) => {
     const [product, setProduct] = useState(null);
@@ -10,12 +11,6 @@ const Product = ({ id }) => {
             .then(res => setProduct(res.data))
             .catch(err => console.log(err));
     }, [id]);
-
-    const deleteOnClick = id => {
-        axios.delete(`http://localhost:8000/api/products/${id}`)
-            .then(res => navigate('/'))
-            .catch(err => console.log(err));
-    }
 
     return (
         <div style={{ margin: 16 + 'px' }}>
@@ -27,7 +22,7 @@ const Product = ({ id }) => {
             <br />
             {product ? <p>Description: {product.desc}</p> : 'Loading...'}
             <br />
-            <button style={{ color: 'red' }} onClick={() => deleteOnClick(product._id)}>Delete Product</button>
+            {product ? <DeleteButton id={product._id} callBack={() => navigate('/')} /> : 'Loading...'}
         </div>
     );
 }

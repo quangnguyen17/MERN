@@ -11,10 +11,6 @@ export default ({ id }) => {
             .catch(err => console.log(err));
     }, []);
 
-    const updateOnClick = () => {
-
-    }
-
     return (
         <div>
             <h1>Edit Product</h1>
