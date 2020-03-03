@@ -8,6 +8,8 @@ export default ({ id, callBack }) => {
                 if (callBack) {
                     callBack();
                 }
+
+                console.log(callBack);
             })
             .catch(err => console.log(err));
     }
