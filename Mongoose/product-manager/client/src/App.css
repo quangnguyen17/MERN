@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.App * {
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid red;
+}
+
+.App input[type=text] {
+  font-size: 1rem;
+  border: 5px solid black;
+}
+
+.App input {
+  border: 2px solid cyan;
+}
