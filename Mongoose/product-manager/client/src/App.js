@@ -3,10 +3,12 @@ import axios from 'axios';
 import { Router } from '@reach/router';
 import Product from './components/Product';
 import ProductsDisplay from './components/ProductsDisplay';
+import UpdateProduct from './components/UpdateProduct';
 import AppContext from './AppContext';
 import './App.css';
 
-const App = () => {
+// App
+export default () => {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
@@ -21,10 +23,9 @@ const App = () => {
         <Router>
           <ProductsDisplay path="/" />
           <Product path="/:id/" />
+          <UpdateProduct path="/:id/edit" />
         </Router>
       </AppContext.Provider>
     </div>
   );
 }
-
-export default App;
