@@ -15,7 +15,7 @@ const Authors = () => {
         axios.get('http://localhost:8000/api/authors')
             .then(results => setAuthors(results.data.sort((author1, author2) => author1.name.localeCompare(author2.name))))
             .catch(errors => console.log(errors));
-    }, [authors]);
+    });
 
     const onDelete = (event, id) => {
         axios.delete(`http://localhost:8000/api/authors/${id}`)
