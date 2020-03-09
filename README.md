@@ -13,7 +13,7 @@
 - ES6, Arrow Functions
 
 # React Hooks
-- useState, useContext, useReducer, etc...
+- useState, useEffect, useContext, useReducer, etc...
 # REST
 - Rest API, RESTful
 
