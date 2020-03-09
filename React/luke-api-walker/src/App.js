@@ -56,7 +56,7 @@ const DetailPage = ({ keyword, id }) => {
     );
   }
 
-  const getID = (url) => url.slice(url.length - 2)[0];
+  const getID = url => url.slice(url.length - 2)[0];
 
   return (
     <div>
